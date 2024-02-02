@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
+import FlashMessage,{showMessage} from "react-native-flash-message";
 
 import { COLORS, icons, images, SIZES } from "../constants";
 import {
@@ -43,6 +44,11 @@ const Home = () => {
             handleClick={() => {
               if (searchTerm) {
                 router.push(`/search/${searchTerm}`)
+              }else{
+                showMessage({
+                  message: "please type in your search term!",
+                  type: "info",
+                });
               }
             }}
           />
@@ -56,3 +62,4 @@ const Home = () => {
 };
 
 export default Home;
+
