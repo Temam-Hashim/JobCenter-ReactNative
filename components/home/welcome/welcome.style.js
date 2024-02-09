@@ -7,12 +7,12 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   userName: {
-    fontFamily: FONT.regular,
+    fontFamily: 'Helvetica',
     fontSize: SIZES.large,
     color: COLORS.secondary,
   },
   welcomeMessage: {
-    fontFamily: FONT.bold,
+    fontFamily: 'Helvetica',
     fontSize: SIZES.xLarge,
     color: COLORS.primary,
     marginTop: 2,
@@ -34,10 +34,11 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   searchInput: {
-    fontFamily: FONT.regular,
+    fontFamily: 'Helvetica',
     width: "100%",
     height: "100%",
     paddingHorizontal: SIZES.medium,
+    opacity:0.999,
   },
   searchBtn: {
     width: 50,
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     borderColor: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
   tabText: (activeJobType, item) => ({
-    fontFamily: FONT.medium,
+    fontFamily: 'Helvetica',
     color: activeJobType === item ? COLORS.secondary : COLORS.gray2,
   }),
 });

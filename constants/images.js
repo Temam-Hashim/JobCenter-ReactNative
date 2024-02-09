@@ -1,7 +1,5 @@
-import profile from "../assets/images/temam.jpg";
-import logo from "../assets/images/logo.png";
+import profile from "../assets/images/temam.jpg"
 
 export default {
-  profile,
-  logo
+  profile
 };

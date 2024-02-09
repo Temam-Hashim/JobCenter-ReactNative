@@ -2,18 +2,19 @@ import { StyleSheet } from "react-native";
 
 import { COLORS, FONT, SIZES } from "../constants";
 
+
 const styles = StyleSheet.create({
     container: {
         width: "100%",
     },
     searchTitle: {
-        fontFamily: FONT.bold,
+        fontFamily: 'Helvetica',
         fontSize: SIZES.xLarge,
         color: COLORS.primary,
     },
     noOfSearchedJobs: {
         marginTop: 2,
-        fontFamily: FONT.medium,
+        fontFamily: 'Helvetica',
         fontSize: SIZES.small,
         color: COLORS.primary,
     },
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
         backgroundColor: COLORS.white
     },
     paginationText: {
-        fontFamily: FONT.bold,
+        fontFamily: 'Helvetica',
         fontSize: SIZES.medium,
         color: COLORS.primary
     }

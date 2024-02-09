@@ -5,12 +5,12 @@ const useFetch = (endpoint, query) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-
+// d92ea64ad9msh7c3c528d896060ep1335c7jsn1faf582385a9
   const options = {
     method: "GET",
     url: `https://jsearch.p.rapidapi.com/${endpoint}`,
     headers: {
-      "X-RapidAPI-Key": "21d96c40ffmshd995a4a5c977df5p12d2dejsn5304aec7e02f",
+      "X-RapidAPI-Key": "d92ea64ad9msh7c3c528d896060ep1335c7jsn1faf582385a9",
       "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
     },
     params: { ...query },

@@ -16,7 +16,7 @@ const JobSearch = () => {
     const [searchLoader, setSearchLoader] = useState(false);
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
-
+// d92ea64ad9msh7c3c528d896060ep1335c7jsn1faf582385a9
     const handleSearch = async () => {
         setSearchLoader(true);
         setSearchResult([])
@@ -26,7 +26,7 @@ const JobSearch = () => {
                 method: "GET",
                 url: `https://jsearch.p.rapidapi.com/search`,
                 headers: {
-                    "X-RapidAPI-Key": "21d96c40ffmshd995a4a5c977df5p12d2dejsn5304aec7e02f",
+                    "X-RapidAPI-Key": "d92ea64ad9msh7c3c528d896060ep1335c7jsn1faf582385a9",
                     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
                 },
                 params: {

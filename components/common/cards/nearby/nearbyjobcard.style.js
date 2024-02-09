@@ -2,6 +2,10 @@ import { StyleSheet } from "react-native";
 
 import { COLORS, SHADOWS, SIZES } from "../../../../constants";
 
+
+
+// Inside your component
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -23,8 +27,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   logImage: {
-    width: "70%",
-    height: "70%",
+    width: "90%",
+    height: "90%",
+    opacity:0.999,
+ 
   },
   textContainer: {
     flex: 1,
@@ -32,12 +38,12 @@ const styles = StyleSheet.create({
   },
   jobName: {
     fontSize: SIZES.medium,
-    fontFamily: "DMBold",
+    fontFamily: 'Helvetica',
     color: COLORS.primary,
   },
   jobType: {
     fontSize: SIZES.small + 2,
-    fontFamily: "DMRegular",
+    fontFamily: 'Helvetica',
     color: COLORS.gray,
     marginTop: 3,
     textTransform: "capitalize",

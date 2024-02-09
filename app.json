@@ -5,6 +5,31 @@
       "bundler": "metro"
     },
     "name": "JobCenter",
-    "slug": "JobCenter"
+    "slug": "JobCenter",
+    "icon": "./logo.png",
+    "platforms": ["ios", "android", "web"], 
+    "extra": {
+      "eas": {
+        "projectId": "20458a22-c32a-4f3f-89ae-d4b2be04849d"
+      }
+    },
+
+    "android": {
+      "package": "com.temamhashim.JobCenter",
+      "useNextBuilds": true,
+      "versionCode": 1,
+      "icon": "./logo.png",
+      "adaptiveIcon": {
+        "foregroundImage": "",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "permissions": [
+      "INTERNET",
+      "ACCESS_FINE_LOCATION",
+      "ACCESS_COARSE_LOCATION",
+      "READ_EXTERNAL_STORAGE",
+      "WRITE_EXTERNAL_STORAGE"
+    ]
   }
 }
