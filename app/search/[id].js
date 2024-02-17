@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { ActivityIndicator, FlatList, Image, TouchableOpacity, View } from 'react-native'
-import { Stack, useRouter, useSearchParams } from 'expo-router'
+import { Stack, useRouter, useLocalSearchParams } from 'expo-router'
 import { Text, SafeAreaView } from 'react-native'
 import axios from 'axios'
 
@@ -9,14 +9,16 @@ import { COLORS, icons, SIZES } from '../../constants'
 import styles from '../../styles/search'
 
 const JobSearch = () => {
-    const params = useSearchParams();
+    const params = useLocalSearchParams();
     const router = useRouter()
+
+    console.log(params)
 
     const [searchResult, setSearchResult] = useState([]);
     const [searchLoader, setSearchLoader] = useState(false);
     const [searchError, setSearchError] = useState(null);
     const [page, setPage] = useState(1);
-// d92ea64ad9msh7c3c528d896060ep1335c7jsn1faf582385a9
+
     const handleSearch = async () => {
         setSearchLoader(true);
         setSearchResult([])
@@ -26,7 +28,7 @@ const JobSearch = () => {
                 method: "GET",
                 url: `https://jsearch.p.rapidapi.com/search`,
                 headers: {
-                    "X-RapidAPI-Key": "d92ea64ad9msh7c3c528d896060ep1335c7jsn1faf582385a9",
+                    "X-RapidAPI-Key": '66588cb8b3msh08d6fa9b8de0776p1ff001jsn989b6de551eb',
                     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
                 },
                 params: {
@@ -96,7 +98,7 @@ const JobSearch = () => {
                             {searchLoader ? (
                                 <ActivityIndicator size='large' color={COLORS.primary} />
                             ) : searchError && (
-                                <Text style={{backgroundColor:"darkred",color:"white", width:"100%",padding:19, fontSize:16}}>sSorry can't fetch the jobs right now</Text>
+                                <Text>Oops something went wrong</Text>
                             )}
                         </View>
                     </>

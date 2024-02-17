@@ -1,4 +1,4 @@
-import { Stack, useRouter, useSearchParams } from "expo-router";
+import { Stack, useRouter, useLocalSearchParams } from "expo-router";
 import { useCallback, useState } from "react";
 import {
   View,
@@ -23,12 +23,13 @@ import useFetch from "../../hook/useFetch";
 const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
-  const params = useSearchParams();
+  const params = useLocalSearchParams();
   const router = useRouter();
 
   const { data, isLoading, error, refetch } = useFetch("job-details", {
     job_id: params.id,
   });
+  // alert(params.id)
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [refreshing, setRefreshing] = useState(false);
@@ -38,18 +39,6 @@ const JobDetails = () => {
     refetch()
     setRefreshing(false)
   }, []);
-
-  const handleShare = async () => {
-    try {
-      const jobUrl = data[0]?.job_google_link ?? 'https://careers.google.com/jobs/results/';
-      const message = "Check out this awesome job!\n" + jobUrl;
-      await Share.share({
-        message: message,
-      });
-    } catch (error) {
-      console.error("Error sharing:", error.message);
-    }
-  };
 
 
   const displayTabContent = () => {
@@ -95,7 +84,7 @@ const JobDetails = () => {
             />
           ),
           headerRight: () => (
-            <ScreenHeaderBtn iconUrl={icons.share} dimension='60%' handlePress={handleShare} />
+            <ScreenHeaderBtn iconUrl={icons.share} dimension='60%' />
           ),
           headerTitle: "",
         }}
@@ -109,7 +98,7 @@ const JobDetails = () => {
           {isLoading ? (
             <ActivityIndicator size='large' color={COLORS.primary} />
           ) : error ? (
-            <Text style={{backgroundColor:"darkred",color:"white", width:"100%",padding:19, fontSize:16}}>Can't fetch the data with your search key</Text>
+            <Text>Something went wrong</Text>
           ) : data.length === 0 ? (
             <Text>No data available</Text>
           ) : (
